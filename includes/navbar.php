@@ -50,4 +50,35 @@
             </ul>
             
             <!-- فرم جستجو -->
-            <form class="d-flex mx-auto" action="<?
+            <form class="d-flex mx-auto" action="<?php echo SITE_URL; ?>/search.php" method="GET">
+                <input class="form-control ms-2" type="search" name="q" placeholder="جستجوی فایل..." aria-label="Search">
+                <button class="btn btn-light" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            
+            <!-- منوی کاربر -->
+            <ul class="navbar-nav ms-auto">
+                <?php if (isLoggedIn()): ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle me-1"></i>
+                            <?php echo htmlspecialchars(Session::get('username')); ?>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="<?php echo SITE_URL; ?>/dashboard.php">داشبورد من</a></li>
+                            <li><a class="dropdown-item" href="<?php echo SITE_URL; ?>/profile.php">ویرایش پروفایل</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="<?php echo SITE_URL; ?>/logout.php">خروج</a></li>
+                        </ul>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo SITE_URL; ?>/login.php">ورود</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo SITE_URL; ?>/register.php">ثبت‌نام</a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </div>
+    </div>
+</nav>
