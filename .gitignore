@@ -1,0 +1,23 @@
+# فایل‌های پیکربندی محلی
+/config/database.php
+
+# فایل‌های آپلود شده
+/uploads/*
+!/uploads/.htaccess
+!/uploads/index.html
+!/uploads/images/.gitkeep
+!/uploads/videos/.gitkeep
+!/uploads/audios/.gitkeep
+!/uploads/documents/.gitkeep
+
+# فایل‌های موقت
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# فایل‌های IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
